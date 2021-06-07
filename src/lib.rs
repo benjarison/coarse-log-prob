@@ -1,5 +1,6 @@
 use std::convert::{From, Into};
 use std::cmp::{PartialOrd, Ordering};
+use serde::{Serialize, Deserialize};
 
 ///
 /// Represents a log probability using "half" precision, which is backed by a u16 value. Log
@@ -7,7 +8,7 @@ use std::cmp::{PartialOrd, Ordering};
 /// `f32::MIN_POSITIVE.ln()`. This representation of log probabilities requires half the
 /// amount of storage of a single precision f32 value, and is useful in cases where low precision
 /// can be tolerated.
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CoarseLogProb(u16);
 
 impl CoarseLogProb {
