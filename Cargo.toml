@@ -1,0 +1,9 @@
+[package]
+name = "coarse-log-prob"
+version = "0.1.0"
+authors = ["Benjamin Harrison <benjamin.jt.harrison@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
