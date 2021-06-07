@@ -76,3 +76,15 @@ impl PartialOrd for CoarseLogProb {
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use crate::CoarseLogProb;
+
+    #[test]
+    fn test_from_f32() {
+        assert_eq!(CoarseLogProb::from(0f32), CoarseLogProb(0));
+        assert_eq!(CoarseLogProb::from(-10.0f32), CoarseLogProb(7504));
+        assert_eq!(CoarseLogProb::from(-87.33655f32), CoarseLogProb(65535));
+        assert_eq!(CoarseLogProb::from(-100f32), CoarseLogProb(65535));
+    }
+}
