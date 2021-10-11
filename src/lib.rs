@@ -8,7 +8,7 @@ use serde::{Serialize, Deserialize};
 /// `f32::MIN_POSITIVE.ln()`. This representation of log probabilities requires half the
 /// amount of storage of a single precision f32 value, and is useful in cases where low precision
 /// can be tolerated.
-#[derive(Clone, Copy, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 pub struct CoarseLogProb(u16);
 
 impl CoarseLogProb {
